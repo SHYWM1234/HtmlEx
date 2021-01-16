@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<mete charset="utf-8"></mete>
+		<title>我的综合练习</title>
+		
+	</head>
+	<body bgcolor="aliceblue" background="./img/bkg2.jpg">
+		<center><h1>用户注册</h1></center>
+		<hr color="green" width="60%" size="2px">
+		<form action="http://localhost:8080/jd/register" method="post">
+			<table align="center">
+				<tr>
+					<td>用户名</td>
+					<td><input type="text" name="uername"/></td>
+				</tr>
+				<tr>
+					<td>密码</td>
+					<td><input type="password" name="userpsd"/></td>
+				</tr>
+				<tr>
+					<td>性别</td>
+					<td>
+						<input type="radio" name=sex value=1 checked/>男
+						<input type="radio" name=sex value=2 />女
+					</td>
+				</tr>
+				<tr>
+					<td>学历</td>
+					<td>
+						<select name="grade">
+							<option value="gz">高中</option>
+							<option value="bk">本科</option>
+							<option value="ss">硕士</option>
+							<option value="bs">博士</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>简介</td>
+					<td><textarea></textarea></td>
+				</tr>
+				<tr align="center">
+					<td colspan=2>
+						<input type="submit" value="提交"/>
+						&nbsp; &nbsp; &nbsp; &nbsp;
+						<input type="reset" value="清空"/>
+					</td>
+				</tr>				
+			</table>
+		</form>
+		<center><h3><a href="http://www.baidu.com">联系我们</a></h3></center>
+		
+	</body>
+</html>
