@@ -1,0 +1,36 @@
+WEB前端：
+	JavaScript
+	
+	1.
+	
+	2.
+	
+	3.标识符和关键字
+	
+	4.变量
+	
+	5.JS数据类型
+		ES6版本之前6种： 
+			原始类型：Undefined Null Number String Boolean 
+			引用类型：Object
+		ES7新增1个：symbol
+		
+		typeof运算符
+		返回6种字符串："undefined"  "number"  "string" "boolean" "object" "function"
+		注意：Null类型取typeof函数，返回"object"
+		
+	6.null NaN undefined区别
+	
+	7.JS中的事件
+	
+	8.JS运算符之void
+	
+	9.JS之控制语句
+	
+	10.JS内置对象
+	
+	11.BOM和DOM的区别和联系
+	
+	12.DOM编程案例
+	
+	13.

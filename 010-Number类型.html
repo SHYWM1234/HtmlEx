@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Number数据类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				1.Number类型包括那些值？
+					-1 0 1 2 2.3 3.14 100....  NaN  Infinity
+					整数、小数、正数、负数、不是数字、无穷大都属于Number类型
+					
+				2.关于NaN（表示Not a Number，但属于Number类型）
+					运算结果本来应该是一个数字，最后算完之后不是一个数字的时候，结果是NaN
+					例子：
+						var a = 100;
+						var b = "chinese"
+						alert(a / b)
+					注：
+						var e = "abc"
+						var f = 10
+						alert(e + f) // 结果不是NaN，而是做字符串拼接
+						
+				3.关于Infinity（表示无穷大）
+					当除数为0的时候，结果为Infinity
+					alert(1.34/0)
+					
+					
+				4.思考： 在JS中 10/3 结果是多少
+					alert(10/3) // 结果是3.333333333333335
+					
+			*/
+		   
+		   var v1 = 1;
+		   var v2 = 2.34;
+		   var v3 = -100;
+		   var v4 = NaN;
+		   var v5 = Infinity;
+		   
+		   
+		   alert(typeof v1)
+		   alert(typeof v2)
+		   alert(typeof v3)
+		   alert(typeof v4)
+		   alert(typeof v5)
+		   
+		   alert("*******************************************************")
+		   
+		   /*
+				1.关于isNaN函数
+					用法：isNaN(数据)，结果是true表示不是一个数字，结果是false表示是一个数字
+					isNaN：is Not a Number
+					
+					例子
+					alert(isNaN(NaN))             // true
+					alert(isNaN("hahahaha"))	  // true
+					
+				2.paseInt函数
+					用法：paseInt(数据)，这里的数据可以是String
+						可以将字符串自动转换成数字，并且取数位。
+						
+		   
+				3.paseFloat函数
+					用法：paseFloat(数据)
+						可以将字符串自动转换成数字
+					
+				4.Math.ceil函数
+					用法：
+						Math.ceil("2.34") // 3
+		   */
+		  
+		  alert(isNaN(NaN)) // true
+		  alert(isNaN("hahahaha"))  // true
+
+		</script>
+	</body>
+</html>
