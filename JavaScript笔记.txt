@@ -22,7 +22,11 @@ WEB前端：
 	6.null NaN undefined区别
 	
 	7.JS中的事件
-	
+		a.常用事件
+		b.注册事件的两种方式
+		c.代码的执行效率
+		d.通过keydown事件演示回车键13，ESC键27
+		
 	8.JS运算符之void
 	
 	9.JS之控制语句
@@ -32,5 +36,13 @@ WEB前端：
 	11.BOM和DOM的区别和联系
 	
 	12.DOM编程案例
+		a.innerHTML innerText操作div和span
+			JS的正则表达式（regular Expression）
+		b.表单验证
+		c.复选框全选和取消全选
+		d.获取下拉列表中选中项的value
+		e.显示网页时钟
+		f.拼接html的方式，设置table的tbody
+		g.要求在次之后学会使用浏览器的F12
 	
 	13.

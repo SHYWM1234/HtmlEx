@@ -31,7 +31,6 @@
 					alert(10/3) // 结果是3.333333333333335
 					
 			*/
-		   
 		   var v1 = 1;
 		   var v2 = 2.34;
 		   var v3 = -100;
@@ -56,13 +55,13 @@
 					alert(isNaN(NaN))             // true
 					alert(isNaN("hahahaha"))	  // true
 					
-				2.paseInt函数
-					用法：paseInt(数据)，这里的数据可以是String
+				2.parseInt函数
+					用法：paserInt(数据)，这里的数据可以是String
 						可以将字符串自动转换成数字，并且取数位。
 						
 		   
-				3.paseFloat函数
-					用法：paseFloat(数据)
+				3.parseFloat函数
+					用法：parseFloat(数据)
 						可以将字符串自动转换成数字
 					
 				4.Math.ceil函数
@@ -70,9 +69,12 @@
 						Math.ceil("2.34") // 3
 		   */
 		  
-		  alert(isNaN(NaN)) // true
-		  alert(isNaN("hahahaha"))  // true
-
+			alert(isNaN(NaN)) // true
+			alert(isNaN("hahahaha"))  // true
+			
+			alert(parseInt("3.4499"))  // 3 
+			alert(parseFloat("3.14999"))   //3.14999
+			alert(Math.ceil(1.00001))  // 2
 		</script>
 	</body>
 </html>

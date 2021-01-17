@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Object类型</title>
+	</head>
+	<body>
+		<script>
+		/*
+			1.Object是所有自定义类型的超类，自定义的任何类型，默认继承Object
+			
+			2.Object包含哪些属性？
+				prototype属性（非常常用！5颗星******）
+				constructor属性
+				
+			3.Object包含那些函数？
+				toString()
+				valueOf()
+				toLocalString()
+				
+			4.在JS当中自定义的类默认继承Object，会继承Object类中所有的属性以及函数
+				话句话说，自定义的类中也有prototype属性
+				
+			5.在JS中怎么创建类？如何new对象？
+				定义类的语法：
+					function 类名(形参){
+						
+					}
+				或者
+					类名 = function(形参){
+						
+					}
+				创建对象的语法：
+					new 类名(实参); // 构造函数与类名一致
+		*/
+		
+			function sayHello(){
+				alert('hello.....')
+			}
+			
+			sayHello(); //这种方式表示吧sayHello当做函数来使用
+			
+			var obj = new sayHello(); //这种方式表示把sayHello当做一个类来创建对象
+			//其中obj是一个引用，保存内存地址指向堆中的对象
+			
+			
+		</script>
+		
+		
+	</body>
+</html>
