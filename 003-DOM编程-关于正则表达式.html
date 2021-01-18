@@ -5,7 +5,7 @@
 		<title>DOM编程-关于正则表达式</title>
 	</head>
 	<body>
-		<script>
+		<script type="text/javascript">
 			window.onload=function(){
 				document.getElementById("btn").onclick = function(){
 				
@@ -13,13 +13,16 @@
 					
 					//var regExp = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 					//var regExp = /^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/
-					var regExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-					var ok = regExp.test(emailText);
+					//var regExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					var ok = emailRegExp.test(emailText);
 					if(!ok){
 						document.getElementById("emailError").innerText = "邮箱不合法！";
+					}else{
+						document.getElementById("emailError").innerText = "邮箱合法";
 					}
 					
-					document.getElementById("email").onfocus = funtion(){
+					document.getElementById("email").onfocus = function(){//这里的function误写成了funtion，导致调试一下午。牢记！学会用火狐浏览器F12调试。
 						document.getElementById("emailError").innerText="";
 					}
 				}
@@ -27,8 +30,9 @@
 		</script>
 		
 		<input type="text" id="email"/>
-		<span id="emailError" style="color: red; font-size: 12px;"></span>
+		<span style="color: red; font-size: 12px;" id="emailError"></span>
 		<br>
 		<input type="button" value = "确认邮箱" id="btn"/>
+
 	</body>
 </html>

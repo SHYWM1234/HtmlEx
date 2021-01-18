@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS捕捉回车键</title>
+	</head>
+	<body>
+		<script>
+			window.onload = function(){
+				document.getElementById("usernameEle").onkeydown = function(event){
+					if(event.keyCode === 13){
+						alert("loading ....")
+					}
+				}
+			}
+		</script>
+		
+		<input type="text" id="usernameEle"/>
+		<input type="button" value = 'OK' id="buttonEle"/>
+		
+	</body>
+</html>

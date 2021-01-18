@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM编程-表单验证综合练习</title>
+	</head>
+	<body>
+		<script>
+			window.onload = function(){
+				document.getElementById("username").onblur=function(){
+					var username = document.getElementById("username").value.trim();
+					var usernameRegExp = /[a-zA-z0-9]{6,14}/
+					if(username == ""){
+						document.getElementById("usernameErr").style="color:red; font-size:12px;";
+						document.getElementById("usernameErr").innerText = "用户名不能为空";
+					}else if(!usernameRegExp.test(username)){
+						document.getElementById("usernameErr").style="color:red; font-size:12px;";
+						document.getElementById("usernameErr").innerText = "用户名不合法"
+					}else{
+						document.getElementById("usernameErr").style="color:green; font-size:12px;";
+						document.getElementById("usernameErr").innerText = "用户名合法"
+					}
+				}
+				document.getElementById("username").onfocus=function(){
+					if(document.getElementById("usernameErr").innerText != "用户名合法"){
+						document.getElementById("username").value = "";
+					}
+					document.getElementById("usernameErr").innerText = "";
+				}
+				
+				document.getElementById("password").onblur = function(){
+					var password = document.getElementById("password").value.trim();
+					if(password == ""){
+						document.getElementById("passwordErr1").style = "color:red; font-size:12px;";
+						document.getElementById("passwordErr1").innerText = "密码不能为空";
+					}else{
+						document.getElementById("passwordErr1").style = "color:green; font-size:12px;";
+						document.getElementById("passwordErr1").innerText = "密码通过"
+					}
+				}
+				document.getElementById("password").onfocus = function(){
+					if(document.getElementById("passwordErr1").innerText != "密码通过"){
+						document.getElementById("password").value = "";
+					}
+					document.getElementById("passwordErr1").innerText = "";
+				}
+				
+				document.getElementById("confpassword").onblur = function(){
+					var confpassword = document.getElementById("confpassword").value.trim();
+					var password = document.getElementById("password").value.trim();
+					if(confpassword != password){
+						document.getElementById("passwordErr2").style = "color:red; font-size:12px";
+						document.getElementById("passwordErr2").innerText = "两次密码输入不一致";
+					}else if(confpassword == ""){
+						document.getElementById("passwordErr2").style = "color:red; font-size:12px";
+						document.getElementById("passwordErr2").innerText = "密码不能为空";
+					}else{
+						document.getElementById("passwordErr2").style = "color:green; font-size:12px";
+						document.getElementById("passwordErr2").innerText = "密码验证通过";
+					}
+				}
+				document.getElementById("confpassword").onfocus = function(){
+					if(document.getElementById("passwordErr2").innerText != "密码验证通过"){
+						document.getElementById("confpassword").value = "";
+					}
+					document.getElementById("passwordErr2").innerText = "";
+				}
+				
+				document.getElementById("email").onblur = function(){
+					var email = document.getElementById("email").value.trim();
+					var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					if(!emailRegExp.test(email)){
+						document.getElementById("emailErr").style = "color:red; font-size:12px";
+						document.getElementById("emailErr").innerText = "邮箱不合法"
+					}else{
+						document.getElementById("emailErr").style = "color:green; font-size:12px";
+						document.getElementById("emailErr").innerText = "邮箱验证通过"
+					}
+				}
+				document.getElementById("email").onfocus = function(){
+					if(document.getElementById("emailErr").innerText != "邮箱验证通过"){
+						document.getElementById("email").value = "";
+					}
+					document.getElementById("emailErr").innerText = "";
+				}
+				
+			}
+		</script>
+		
+		<center>
+			<font color="darkblue" size="6">用户注册</font>
+			<hr color="black" size="2px" width="50%"/>
+			<form action="http://localhost:8080/ac/save/">
+				<table>
+					<tr>
+						<td>用户名</td>
+						<td>
+							<input type="text" name="username" id="username"/>
+						</td>
+						<td>
+							<span style="color:red; font-size=12px;" id="usernameErr"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>密码</td>
+						<td>
+							<input type="password" id="password"/>
+						</td>
+						<td>
+							<span style="color:red; font-size=12px;" id="passwordErr1"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>确认密码</td>
+						<td>
+							<input type="password" name="password" id="confpassword"/>
+						</td>
+						<td>
+							<span style="color:red; font-size=12px;" id="passwordErr2"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>邮箱</td>
+						<td>
+							<input type="text" name="email"id="email"/>
+						</td>
+						<td>
+							<span style="color:red; font-size=12px;" id="emailErr"></span>
+						</td>
+					</tr>
+					<tr>
+						<td rospan = "2">
+							<input type="submit" value="注册" id="sbmtbutton"/>
+							&nbsp; &nbsp; &nbsp;
+							<input type="reset" value="清空"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<br>
+			<br>
+			<a href="http://www.baidu.com/">联系我们</a>
+			
+			
+		</center>
+	</body>
+</html>
