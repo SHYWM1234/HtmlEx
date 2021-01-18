@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM编程-关于正则表达式的对象的创建</title>
+	</head>
+	<body>
+		<script>
+			window.onload = function(){
+				document.getElementById("btn").onclick = function(){
+					//var emailRegExp = new RegExp("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$")
+					var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+					alert(emailRegExp);
+					alert(emailRegExp.test("331234@153.com"))
+				}
+			}
+		</script>
+		
+		<input type="button" value="ok" id="btn"/>
+	</body>
+</html>

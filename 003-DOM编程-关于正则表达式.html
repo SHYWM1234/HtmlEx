@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM编程-关于正则表达式</title>
+	</head>
+	<body>
+		<script>
+			window.onload=function(){
+				document.getElementById("btn").onclick = function(){
+				
+					var emailText = document.getElementById("email").value;
+					
+					//var regExp = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+					//var regExp = /^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/
+					var regExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					var ok = regExp.test(emailText);
+					if(!ok){
+						document.getElementById("emailError").innerText = "邮箱不合法！";
+					}
+					
+					document.getElementById("email").onfocus = funtion(){
+						document.getElementById("emailError").innerText="";
+					}
+				}
+			}
+		</script>
+		
+		<input type="text" id="email"/>
+		<span id="emailError" style="color: red; font-size: 12px;"></span>
+		<br>
+		<input type="button" value = "确认邮箱" id="btn"/>
+	</body>
+</html>

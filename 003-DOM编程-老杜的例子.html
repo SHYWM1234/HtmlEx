@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM编程</title>
+	</head>
+	<body>
+		<script>
+			window.onload=function(){
+				document.getElementById("btn").onclick=function(){
+					var email = document.getElementById("email").value;
+					var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					var ok = emailRegExp.test(email);
+					alert(ok);
+				}
+			}
+		</script>
+		<input type="text" id="email"/>
+		<span style="color:red; font-size:12px;" id="emailError"></span>
+		<br>
+		<input type="button" value="OK" id="btn">
+	</body>
+</html>
