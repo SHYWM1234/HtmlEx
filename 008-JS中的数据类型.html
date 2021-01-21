@@ -6,6 +6,39 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+			/*
+				1.
+				
+				2.ES规范（ECMAScript规范）在ES6之后，有基于以上的六种类型之外添加了一种新的类型：Symbol
+				
+				3.JS中有一个运算符叫typeof，这个运算符可以在程序运行阶段动态获取标量的数据类型
+					typeof运算符的语法格式：
+						typeof 变量名
+					typeof运算符的运算结果是以下六个字符串之一：注意，字符串都是小写。
+						“undefined”
+						“number”
+						“string”
+						“boolean”
+						“object”
+						“function”
+						
+				举例：求和，要求变量a和变量b将来的数据类型必须是数字，不能是其他类型
+					因为以下定义的这个sum函数是为了完成两个数字的求和。
+					function sum(a, b){}
+					
+					别人去调用以上你写的函数，可能这样给你传参数：
+					sum(false, "abc")
+					因此可以使用typeof运算符加以判断。
+					
+					function sum(a, b){
+						if(typeof a == "number" && typeof b == "number"){
+							return a+b;
+						}
+						alert("参数不合法");
+					}
+				
+			*/
+		   
 			var i = 0
 			var j = "string001"
 			var flag = false 
