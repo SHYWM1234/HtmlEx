@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="Generator" content="EditPlus">
+		<meta name="Author" contend="">
+		<title> 第一个JQuery网页</title>
+		<script src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("p").hide();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p id="ppp1"> hello </p>
+		<button type="button">clickme</button>
+	</body>
+</html>
+
+
+<!-- 
+$(this).hide() //隐藏当前HTML元素
+$("#test").hide() //隐藏id=“text”的元素
+$("p").hide() //隐藏所有p标签
+$(".text").hide() //隐藏所有class=“text”的元素
+ -->

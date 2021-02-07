@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AjaxTest01</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			btnClick = function(){
+				alert('click');
+				var xmlhttprequest = new XMLHttpRequest(); //创建异步对象
+				alert(xmlhttprequest.readyState) // 存有异步对象的状态
+				xmlhttprequest.onreadystatechange = function() {
+					alert(xmlhttprequest.readyState)
+					// 处理请求的变化
+					if(xmlhttprequest.readyState == 4 && xmlhttprequest.status == 1){
+						
+					}
+				}
+				xmlhttprequest.open('GET', '/one', true) //初始化异步对象
+				xmlhttprequest.send()
+			}
+		</script>
+		<input type="button" value="请求" id="btn" onclick="btnClick()"/> <!-- 括号不能丢！！ -->
+	</body>
+</html>
