@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <!-- 主体的代码都在这里写！！ -->
+  <div id="app">
+    <center>
+		<el-button @click="visible = true">Button</el-button>
+	</center>
+	<center>
+		<el-transfer ref="provinceTransfer" style="text-align: left; display: inline-block" v-model="value" :data="data"
+		:titles="['可选省份', '已选省份']"
+		@left-check-change="leftCheckChange"
+		@right-check-change="rightCheckChange"></el-transfer>
+	</center>
+    <el-dialog :visible.sync="visible" title="对话框">
+		<h3>别点我！</h3>
+    </el-dialog>
+  </div>
+</body>
+  <!-- import Vue before Element -->
+  <script src="vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { 
+			visible: false ,
+			data: [
+				{key:1, value:"shandong", label:"山东"},
+				{key:2, value:"liaoning", label:"辽宁"},
+				{key:3, value:"beijing", label:"北京"},
+				{key:4, value:"shanghai", label:"上海"},
+				{key:5, value:"tianjin", label:"天津"},
+				{key:6, value:"jiangsu", label:"江苏"},
+			], 
+			value: []
+			
+		}
+      },
+	  methods: {
+		  leftCheckChange(selectedKeys, nowChangeKeys) {
+			  this.$refs.provinceTransfer.addToRight()
+		  },
+		  rightCheckChange() {
+			  this.$refs.provinceTransfer.addToLeft()
+		  }
+	  }
+    })
+  </script>
+</html>
