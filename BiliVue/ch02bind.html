@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ch02bind</title>
+		<script src="../Vue/vue.js"></script>
+	</head>
+	<body>
+		<div id="app2">
+			<span title="你好">
+				这是一个简短的提示信息
+			</span>
+			</br>
+			<span v-bind:title="message">
+				鼠标悬停在这里可以看到【动态绑定】的信息
+			</span>
+			<input type="text" v-bind:value="message"/>
+			</br>
+			<input type="button" value="确定" title="一个按钮"/>
+		</div>
+		
+		<script>
+			var vm = new Vue({
+				el: '#app2',
+				data: { // 这里是model
+					message: 'helloWorld'
+				}
+			})
+		</script>
+	</body>
+</html>
